@@ -29,6 +29,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,7 +49,44 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
+      name: 'Your PWA App',
+      short_name: 'PWA App',
+      description: 'An amazing Progressive Web App with Nuxt',
       lang: 'en',
+      theme_color: '#4DBA87',
+      background_color: '#ffffff',
+      display: 'standalone', // Makes the app open in full-screen mode
+      icons: [
+        {
+          src: '/icon.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/icon-512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    workbox: {
+      // Customize workbox options
+      runtimeCaching: [
+        {
+          urlPattern: 'https://yourapi.com/.*',
+          handler: 'NetworkFirst',
+          method: 'GET',
+          strategyOptions: {
+            cacheName: 'api-cache',
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+      ],
+    },
+    meta: {
+      name: 'Your PWA App',
+      author: 'Your Name',
+      theme_color: '#4DBA87',
     },
   },
 
