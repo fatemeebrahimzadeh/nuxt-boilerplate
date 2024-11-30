@@ -17,5 +17,6 @@
     },
     "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"]
   },
+  "include": ["nuxt.config.ts", "pages/**/*.vue", "components/**/*.vue"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
