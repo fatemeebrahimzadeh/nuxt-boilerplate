@@ -1,6 +1,5 @@
 # nuxt-boilerplate
 
-
 ## Build Setup
 
 ```bash
