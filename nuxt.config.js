@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  ssr: true, // Enable Server-Side Rendering
+  target: 'server', // 'server' is the default, ensure it's set for SSR
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt-boilerplate',
